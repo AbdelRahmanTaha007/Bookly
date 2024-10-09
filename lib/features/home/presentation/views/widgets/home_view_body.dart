@@ -21,9 +21,12 @@ class HomeViewBody extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              Text(
-                "Best Seller",
-                style: Styles.textStyle18.copyWith(fontFamily: kGtSectraFine),
+              Padding(
+                padding: const EdgeInsets.only(left: 30.0),
+                child: Text(
+                  "Best Seller",
+                  style: Styles.textStyle18.copyWith(fontFamily: kGtSectraFine),
+                ),
               ),
               const SizedBox(
                 height: 20,

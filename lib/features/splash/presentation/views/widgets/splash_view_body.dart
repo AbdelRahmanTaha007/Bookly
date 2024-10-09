@@ -1,9 +1,12 @@
-import 'package:bookly/constants.dart';
+// import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
-import 'package:bookly/features/home/presentation/views/home_view.dart';
+// import 'package:bookly/features/home/presentation/views/home_view.dart';
+// import 'package:bookly/features/splash/presentation/views/splash_view.dart';
 import 'package:bookly/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:go_router/go_router.dart';
+// import 'package:get/route_manager.dart';
+// import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -23,8 +26,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     initSlidingAnimation();
     navigationHome();
   }
-
-  
 
   @override
   void dispose() {
@@ -56,11 +57,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
             .animate(animationController);
     animationController.forward();
   }
+
   //
   void navigationHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const HomeView(),
-          transition: Transition.fade, duration: kTransitionDuration);
+      GoRouter.of(context).push("/HomeView");
+
+      // Get.to(() => const HomeView(),
+      //     transition: Transition.fade, duration: kTransitionDuration);
     });
   }
 }
