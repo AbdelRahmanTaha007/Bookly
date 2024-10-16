@@ -1,4 +1,3 @@
-
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
@@ -7,8 +6,8 @@ import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookListviewItem extends StatelessWidget {
+  const BookListviewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +46,8 @@ class BestSellerListViewItem extends StatelessWidget {
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       "Harry Potter and the Globet of Fire",
-                      style:
-                          Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
+                      style: Styles.textStyle20
+                          .copyWith(fontFamily: kGtSectraFine),
                     ),
                   ),
                   const SizedBox(
