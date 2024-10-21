@@ -1,4 +1,3 @@
-
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/similar_books_listview.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +9,6 @@ class SimilarBookSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-       
         Align(
           alignment: Alignment.centerLeft,
           child: Text(
