@@ -15,7 +15,7 @@ class SimiarBooksListview extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 5.0),
-            child: CustomBookImage(),
+            child: CustomBookImage(imageUrl: "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg",),
           );
         },
       ),
