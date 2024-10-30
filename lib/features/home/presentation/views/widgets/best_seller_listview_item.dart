@@ -10,12 +10,13 @@ import 'package:go_router/go_router.dart';
 class BookListviewItem extends StatelessWidget {
   const BookListviewItem({super.key, required this.booksModel});
   final BookModel booksModel;
-  
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context)
+            .push(AppRouter.kBookDetailsView, extra: booksModel);
       },
       child: SizedBox(
         height: 125,
