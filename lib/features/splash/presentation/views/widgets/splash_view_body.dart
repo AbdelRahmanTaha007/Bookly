@@ -30,7 +30,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     animationController.dispose();
   }
@@ -61,7 +60,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   //
   void navigationHome() {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 3), () {
       GoRouter.of(context).push(AppRouter.kHomeView);
 
       // Get.to(() => const HomeView(),

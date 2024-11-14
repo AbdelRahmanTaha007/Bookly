@@ -23,7 +23,8 @@ class BookListviewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookImage(
-                imageUrl: booksModel.volumeInfo.imageLinks?.thumbnail ?? "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"),
+                imageUrl: booksModel.volumeInfo.imageLinks?.thumbnail ??
+                    "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"),
             const SizedBox(
               width: 30,
             ),
@@ -45,6 +46,8 @@ class BookListviewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     booksModel.volumeInfo.authors?[0] ?? "Author",
                     style: Styles.textStyle14,
                   ),
