@@ -1,6 +1,7 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_listview_item.dart';
+import 'package:bookly/features/home/presentation/views/widgets/featured_listview_item.dart';
 import 'package:bookly/features/search/presentation/manager/cubit/search_cubit.dart';
 import 'package:bookly/features/search/presentation/views/widgets/custom_search_textfield.dart';
 import 'package:flutter/material.dart';
@@ -33,13 +34,13 @@ class _SearchViewBodyState extends State<SearchViewBody> {
           ),
           CustomSearchTextField(
             onPressed: () {
-              BlocProvider.of<SearchCubit>(context).fetchSearchBooks(
-                  category: controller?.text ?? "");
+              BlocProvider.of<SearchCubit>(context)
+                  .fetchSearchBooks(category: controller?.text ?? "");
             },
             onSubmitted: (value) {
               controller!.text = value;
-              BlocProvider.of<SearchCubit>(context).fetchSearchBooks(
-                  category: controller?.text ?? "");
+              BlocProvider.of<SearchCubit>(context)
+                  .fetchSearchBooks(category: controller?.text ?? "");
             },
           ),
           const SizedBox(
@@ -67,23 +68,21 @@ class SearchResultsListView extends StatelessWidget {
     return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
         if (state is SearchSuccess) {
-          
-            return ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.zero,
-              itemCount: state.books.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: BookListviewItem(
-                    booksModel: state.books[index],
-                  ),
-                );
-              },
-            );
-
+          return ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.zero,
+            itemCount: state.books.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: BookListviewItem(
+                  booksModel: state.books[index],
+                ),
+              );
+            },
+          );
         } else if (state is SearchFailure) {
-          return ErrorWidget(state.errMessage);
+          return Center(child: CustomErrorWidget(errMessage: state.errMessage));
         } else {
           return const SizedBox();
         }
